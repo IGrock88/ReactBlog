@@ -26,7 +26,8 @@ export default class Login extends React.Component {
                     </button>
                 </p>
                 <Modal show={this.state.isOpen}
-                       onClose={this.toggleModal}>
+                       onClose={this.toggleModal}
+                        modalTitle={"Login"}>
                     <div className="input-group login">
                         <input type="text" className="form-control login__textField" placeholder="Username"/>
                         <input type="password" className="form-control login__textField" placeholder="Password"/>

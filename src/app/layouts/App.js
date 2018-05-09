@@ -13,7 +13,7 @@ export default class App extends React.Component {
                 <Header menuItems={this.props.data.menuItems}/>
                 <Login/>
                 <div className="row marketing">
-                    <MainContent posts={this.props.data.posts}/>
+                    <MainContent data={this.props.data}/>
                     <Aside menuItems={this.props.data.menuItems}/>
                 </div>
                 <Footer/>

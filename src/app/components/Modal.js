@@ -38,7 +38,7 @@ export default class Modal extends React.Component {
                         <button className="close" onClick={this.props.onClose}>
                             X
                         </button>
-                        <h4 className="modal-title" id="mySmallModalLabel">Login</h4>
+                        <h4 className="modal-title" id="mySmallModalLabel">{this.props.modalTitle}</h4>
                     </div>
                     {this.props.children}
                 </div>

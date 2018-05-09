@@ -35,6 +35,10 @@ body {
     margin-top: 10px;
 }
 
+.tab__control, .tab__control a{
+    outline: none !important;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
     .container {
@@ -44,6 +48,7 @@ body {
 .container-narrow > hr {
     margin: 30px 0;
 }
+
 
 /* Main marketing message and sign up button */
 .jumbotron {
