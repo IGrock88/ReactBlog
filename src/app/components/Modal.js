@@ -8,14 +8,7 @@ export default class Modal extends React.Component {
         }
 
         const backdropStyle = {
-            position: 'fixed',
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            backgroundColor: 'rgba(0,0,0,0.3)',
-            padding: 50,
-            zIndex: 100
+
 
         };
 
@@ -30,7 +23,7 @@ export default class Modal extends React.Component {
         };
 
         return (
-            <div className="backdrop" style={backdropStyle}>
+            <div className="backdrop">
                 <div className="LoginModal" style={modalStyle}>
 
                     <div className="login__header">

@@ -4,37 +4,33 @@ import News from "./News";
 
 export default class Tabs extends React.Component{
     constructor(props){
-
         super(props);
+        const DEFAULT_ACTIVE_TAB = 0;
 
         this.state = {
-            activeTab: 1
+            activeTab: DEFAULT_ACTIVE_TAB
         }
 
         this.switchTab = this.switchTab.bind(this);
     }
 
     switchTab(tab){
-        console.log(tab.target.tabIndex);
         this.setState({
             activeTab: tab.target.tabIndex
         });
-        console.log(this.state.activeTab);
     }
 
     render(){
-        console.log(this.props);
+        let tabs = this.props.data.tabs.map((tab, index) =>
+            <li key={index} role="presentation"
+                onClick={this.switchTab}
+                className={this.state.activeTab == index ? 'active' : ''}>
+                <a className='tab__control' tabIndex={index} href="#">{tab}</a></li>
+        );
         return (
             <div className="panel panel-default">
                 <ul className="nav nav-tabs">
-                    <li role="presentation"
-                        onClick={this.switchTab}
-                        className={this.state.activeTab == 1 ? 'active' : ''}>
-                        <a className='tab__control' tabIndex={1} href="#">Blog</a></li>
-                    <li role="presentation"
-                        onClick={this.switchTab}
-                        className={this.state.activeTab == 2 ? 'active' : ''}>
-                        <a className='tab__control' tabIndex={2} href="#">News</a></li>
+                    {tabs}
                 </ul>
                 <Posts posts={this.props.data.posts} show={false}/>
                 <News posts={this.props.data.posts} show={true}/>
