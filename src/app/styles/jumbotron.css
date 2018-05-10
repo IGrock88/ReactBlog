@@ -59,6 +59,10 @@ body {
     padding: 30px;
 }
 
+.tab__control{
+    cursor: pointer;
+}
+
 
 /* Customize container */
 @media (min-width: 768px) {

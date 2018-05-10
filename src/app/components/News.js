@@ -4,14 +4,21 @@ import axios from "axios/index";
 export default class News extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            articles: []
+        }
+    }
 
+    componentWillMount(){
+        const URL = 'news.json';
+        this.getData(URL);
     }
 
     getData(url){
         axios({
             method: 'get',
             url: url
-        }).then(function (response) {
+        }).then((response)=>{
             console.log(response);
             this.setState({
                 articles: response.data
@@ -21,23 +28,18 @@ export default class News extends React.Component{
 
     render(){
 
-        if(!this.props.show) {
-            return null;
-        }
-        let posts = this.props.posts.map((post, index) =>
-            <div className='post' key={index}>
-                <h4><a href={'/new/' + post.id}>{post.title}</a></h4>
-                <p>{post.text}</p>
+        let articles = this.state.articles.map((article, index) =>
+            <div className='new' key={index}>
+                <h4><a href={'/new/' + article.id}>{article.title}</a></h4>
+                <p>{article.text}</p>
             </div>
         );
 
         return(
-
             <div className="panel-body ">
-                {posts}
+                <h3>Новости</h3>
+                {articles}
             </div>
         );
-
-
     }
 }

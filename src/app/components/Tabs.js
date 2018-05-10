@@ -8,7 +8,6 @@ export default class Tabs extends React.Component{
     constructor(props){
         super(props);
         const DEFAULT_ACTIVE_TAB = 0;
-        this.urlTypes = ['/post/', '/new/'];
         this.articles;
 
 
@@ -24,12 +23,11 @@ export default class Tabs extends React.Component{
     }
 
     render(){
-        console.log(this.props);
         let tabControls = this.props.data.tabs.map((tab, index) =>
             <li key={index} role="presentation"
                 onClick={this.switchTab}
-                className={this.state.activeTab === index ? 'active' : ''}>
-                <a className='tab__control' tabIndex={index} href="#">{tab.title}</a></li>
+                className={this.state.activeTab === index ? 'active' : null}>
+                <a className='tab__control' tabIndex={index} >{tab.title}</a></li>
         );
         return (
             <div className="panel panel-default">
