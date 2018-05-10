@@ -7,24 +7,10 @@ export default class Modal extends React.Component {
             return null;
         }
 
-        const backdropStyle = {
-
-
-        };
-
-        const modalStyle = {
-            backgroundColor: '#fff',
-            borderRadius: 5,
-            maxWidth: 500,
-            minHeight: 300,
-            margin: '0 auto',
-            padding: 30
-
-        };
 
         return (
             <div className="backdrop">
-                <div className="LoginModal" style={modalStyle}>
+                <div className="LoginModal">
 
                     <div className="login__header">
 
