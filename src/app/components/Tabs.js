@@ -8,8 +8,6 @@ export default class Tabs extends React.Component{
     constructor(props){
         super(props);
         const DEFAULT_ACTIVE_TAB = 0;
-        this.articles;
-
 
         this.state = {
             activeTab: DEFAULT_ACTIVE_TAB
@@ -27,7 +25,8 @@ export default class Tabs extends React.Component{
             <li key={index} role="presentation"
                 onClick={this.switchTab}
                 className={this.state.activeTab === index ? 'active' : null}>
-                <a className='tab__control' tabIndex={index} >{tab.title}</a></li>
+                <a className='tab__control' tabIndex={index} >{tab.title}</a>
+            </li>
         );
         return (
             <div className="panel panel-default">
@@ -37,6 +36,5 @@ export default class Tabs extends React.Component{
                 <Tab activeTab={this.state.activeTab}/>
             </div>
         )
-
     }
 }

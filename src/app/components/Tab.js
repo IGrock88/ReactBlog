@@ -4,11 +4,6 @@ import Posts from "./Posts";
 
 export default class Tab extends React.Component{
 
-    constructor(props){
-        super(props);
-
-    }
-
     render(){
         if(this.props.activeTab === 0) return <Posts/>;
         else if (this.props.activeTab === 1) return <News/>;
