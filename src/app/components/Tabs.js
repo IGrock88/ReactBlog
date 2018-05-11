@@ -31,7 +31,8 @@ export default class Tabs extends React.Component{
             </li>
         );
         return (
-            <div className="panel panel-default">
+            <div className="panel panel-success">
+                <div className="panel-heading ">Newest articles</div>
                 <ul className="nav nav-tabs">
                     {tabControls}
                 </ul>

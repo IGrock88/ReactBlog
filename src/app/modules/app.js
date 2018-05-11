@@ -3,7 +3,7 @@ import React from "react";
 import App from "../layouts/App";
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
-module.exports = function (data, idRoot) {
+module.exports = function (idRoot) {
     ReactDom.render(
         <Router history={browserHistory}>
             <Route path="/" component={App}>
