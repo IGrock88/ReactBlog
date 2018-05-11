@@ -18,7 +18,7 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <section className="jumbotron">
+            <section className="jumbotron col-lg-12">
                 <h1>Login</h1>
                 <p className="lead">Please, login</p>
                 <p>

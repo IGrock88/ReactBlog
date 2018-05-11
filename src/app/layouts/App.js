@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "../components/Header";
 import Login from "../components/Login";
-import MainContent from "../components/MainContent";
+import MainContent from "../pages/Main";
 import Aside from "../components/Aside";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
@@ -26,9 +26,10 @@ export default class App extends React.Component {
         return (
             <div className="container">
                 <Header/>
-                <Login/>
+
                 <div className="row marketing">
-                    <MainContent/>
+                    <Login/>
+                    {this.props.children}
                     <Aside/>
                 </div>
                 <Footer/>
