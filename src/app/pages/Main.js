@@ -8,6 +8,7 @@ export default class MainContent extends React.Component {
 
         return (
             <main>
+
             <Login/>
             <section className="col-lg-8 left-col">
                 <Tabs />

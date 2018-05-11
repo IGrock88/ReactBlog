@@ -18,7 +18,8 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <section className="jumbotron col-lg-12">
+            <div className="panel col-lg-12">
+            <section className="jumbotron">
                 <h1>Login</h1>
                 <p className="lead">Please, login</p>
                 <p>
@@ -38,6 +39,7 @@ export default class Login extends React.Component {
 
                 </Modal>
             </section>
+            </div>
         )
     }
 
