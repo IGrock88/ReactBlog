@@ -1,6 +1,6 @@
 import React from 'react';
 import Tab from "./Tab";
-import axios from "axios/index";
+
 
 
 
@@ -8,6 +8,8 @@ export default class Tabs extends React.Component{
     constructor(props){
         super(props);
         const DEFAULT_ACTIVE_TAB = 0;
+
+        this.tabs = [{link: 'posts.json', title: 'Blog'}, {link: 'news.json', title: 'News'}];
 
         this.state = {
             activeTab: DEFAULT_ACTIVE_TAB
@@ -21,7 +23,7 @@ export default class Tabs extends React.Component{
     }
 
     render(){
-        let tabControls = this.props.data.tabs.map((tab, index) =>
+        let tabControls = this.tabs.map((tab, index) =>
             <li key={index} role="presentation"
                 onClick={this.switchTab}
                 className={this.state.activeTab === index ? 'active' : null}>

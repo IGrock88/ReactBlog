@@ -25,11 +25,11 @@ export default class App extends React.Component {
     render() {
         return (
             <div className="container">
-                <Header menuItems={this.props.data.menuItems}/>
+                <Header/>
                 <Login/>
                 <div className="row marketing">
-                    <MainContent data={this.props.data}/>
-                    <Aside menuItems={this.props.data.menuItems}/>
+                    <MainContent/>
+                    <Aside/>
                 </div>
                 <Footer/>
                 <Modal show={this.state.isOpen}

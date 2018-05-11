@@ -3,8 +3,14 @@ import {Link} from 'react-router';
 
 export default class MainMenu extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.menuItems = [{link: '/', text: 'Home'},
+            {link: 'blog', text: 'Blog'}, {link: 'comments', text: 'Comments'}, {link: 'users', text: 'Users'}];
+    }
+
     render() {
-        let items = this.props.menuItems.map((item, index) =>
+        let items = this.menuItems.map((item, index) =>
             <li role="presentation" key={index}><Link to={item.link}>{item.text}</Link></li>
         );
         return (

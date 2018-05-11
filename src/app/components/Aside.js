@@ -8,7 +8,7 @@ export default class Aside extends React.Component {
             <aside className="col-lg-4 right-col">
                 <div className="panel panel-default">
                     <div className="panel-body">
-                        <SideMenu menuItems={this.props.menuItems}/>
+                        <SideMenu />
                     </div>
                 </div>
             </aside>

@@ -7,7 +7,7 @@ export default class MainContent extends React.Component {
 
         return (
             <main className="col-lg-8 left-col">
-                <Tabs data={this.props.data}/>
+                <Tabs />
             </main>
         );
     }
