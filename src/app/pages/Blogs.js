@@ -4,13 +4,6 @@ import BlogsList from "../components/BlogsList";
 
 export default class Blogs extends React.Component {
 
-    constructor(props){
-        super(props);
-
-
-
-    }
-
     render() {
 
         return (
