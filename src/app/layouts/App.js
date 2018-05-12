@@ -28,7 +28,6 @@ export default class App extends React.Component {
                 <Header/>
 
                 <div className="row marketing">
-                    {/*<Login/>*/}
                     {this.props.children}
                     <Aside/>
                 </div>

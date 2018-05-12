@@ -1,6 +1,7 @@
 import React from 'react';
 import Tabs from "../components/Tabs";
 import Login from "../components/Login";
+import {Link} from 'react-router';
 
 export default class MainContent extends React.Component {
 
