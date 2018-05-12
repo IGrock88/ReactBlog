@@ -8,10 +8,12 @@ export default class BlogsList extends React.Component {
         this.state = {
             blogs: []
         };
+    }
 
-        let blogServ = new BlogService();
+    componentDidMount(){
+        let blogService = new BlogService();
 
-        blogServ.getBlogs((data)=> {
+        blogService.getBlogs((data)=> {
             this.setState({
                 blogs: data
             })

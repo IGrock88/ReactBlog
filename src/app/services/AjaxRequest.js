@@ -10,13 +10,7 @@ export default class AjaxRequest {
             params: params,
         }).then((response)=> {
             console.log(response);
-            let data = [];
-            for(let i = 0; i < response.data.length; i++){
-                let id = response.data[i].id;
-                data[id] = response.data[i]; // добавляю в массив, индекс ставлю ид чтобы потом легко управлять данными
-            }
-            callback(data);
-
+            callback(response.data);
         }).catch((errror) => {
             console.log("Ошибка", errror);
         });
