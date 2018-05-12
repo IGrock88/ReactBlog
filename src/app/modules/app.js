@@ -17,7 +17,7 @@ module.exports = function (idRoot) {
             <Route path="/" component={App}>
                 <IndexRoute component={Main} />
                 <Route path="blog" component={Blog} />
-                <Route path="blog/view/:idPost" component={SinglePost}/>
+                <Route path="post/view/:idPost" component={SinglePost}/>
 
                 <Route path="comments" component={Comments}/>
 
