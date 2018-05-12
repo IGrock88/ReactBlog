@@ -17,16 +17,12 @@ module.exports = function (idRoot) {
             <Route path="/" component={App}>
                 <IndexRoute component={Main} />
                 <Route path="blog" component={Blog} />
-                <Route path="post/view/:idPost" component={SinglePost}/>
-
+                <Route path="blog/view/:idPost" component={SinglePost}/>
                 <Route path="comments" component={Comments}/>
-
                 <Route path="users" component={Users}/>
-                <Route path="user/show/:idUser" component={SingleUser}/>
-
+                <Route path="users/show/:idUser" component={SingleUser}/>
                 <Route path="*" component={Error404} />
             </Route>
-        </Router>, document.querySelector(idRoot))
-
-    ;
+        </Router>, document.querySelector(idRoot)
+    );
 };
