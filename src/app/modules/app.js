@@ -4,7 +4,7 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 import App from "../layouts/App";
 import Main from "../pages/Main";
-import Blog from "../pages/Blog";
+import Blogs from "../pages/Blogs";
 import SinglePost from "../pages/SinglePost";
 import Comments from "../pages/Comments";
 import Users from "../pages/Users";
@@ -16,7 +16,7 @@ module.exports = function (idRoot) {
         <Router history={browserHistory}>
             <Route path="/" component={App}>
                 <IndexRoute component={Main} />
-                <Route path="blog" component={Blog} />
+                <Route path="blog" component={Blogs} />
                 <Route path="blog/view/:idPost" component={SinglePost}/>
                 <Route path="comments" component={Comments}/>
                 <Route path="users" component={Users}/>

@@ -2,11 +2,10 @@ import AjaxRequest from "./AjaxRequest";
 
 export default class BlogService{
 
-    getBlogs(params = null){
+    getBlogs(callback, params = null){
         const URL = 'https://my-json-server.typicode.com/IGrock88/json/blogs';
         let ajax = new AjaxRequest();
-        ajax.request(URL, params);
-        return ajax.getData();
+        ajax.request(URL, callback, params);
     }
 
     getOneBlog(id, params = null){
