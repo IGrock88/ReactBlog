@@ -1,6 +1,6 @@
 import React from 'react';
-import BlogService from "../services/BlogService";
-import LoadingAnimation from "./LoadingAnimation";
+import BlogService from "../../services/BlogService";
+import LoadingAnimation from "../global/LoadingAnimation";
 import BlogItem from "./BlogItem";
 
 export default class BlogsList extends React.Component {

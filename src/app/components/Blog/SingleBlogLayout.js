@@ -1,11 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router';
 import BlogItem from "./BlogItem";
-import BlogService from "../services/BlogService";
-import LoadingAnimation from "./LoadingAnimation";
+import BlogService from "../../services/BlogService";
+import LoadingAnimation from "../global/LoadingAnimation";
 import PostList from "./PostList";
 
-export default class SingleBlogBody extends React.Component {
+export default class SingleBlogLayout extends React.Component {
 
     constructor(props){
         super(props);
@@ -13,14 +12,10 @@ export default class SingleBlogBody extends React.Component {
             blog: [],
             posts: []
         }
-
-
     }
 
     componentWillMount(){
         this.getBlogData();
-
-
     }
 
     getBlogData(){
@@ -51,5 +46,4 @@ export default class SingleBlogBody extends React.Component {
             </div>
         );
     }
-
 }

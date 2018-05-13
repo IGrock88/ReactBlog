@@ -6,7 +6,7 @@ export default class MainMenu extends React.Component {
     constructor(props){
         super(props);
         this.menuItems = [{link: '', text: 'Home'},
-            {link: 'blog', text: 'Blogs'}, {link: 'users', text: 'Users'}];
+            {link: 'blog', text: 'Blogs'},{link: 'comments', text: 'Comments'}, {link: 'users', text: 'Users'}];
 
     }
 

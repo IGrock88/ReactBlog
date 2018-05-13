@@ -6,7 +6,7 @@ import App from "../layouts/App";
 import Main from "../pages/Main";
 import Blogs from "../pages/Blogs";
 import SinglePost from "../pages/SinglePost";
-import Comments from "../components/Comments";
+import Comments from "../pages/Comments";
 import Users from "../pages/Users";
 import SingleUser from "../pages/SingleUser";
 import Error404 from "../pages/error/Error404";

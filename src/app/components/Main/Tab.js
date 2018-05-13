@@ -1,6 +1,6 @@
 import React from 'react';
-import News from "./News";
-import Posts from "./Posts";
+import News from "../global/News";
+import Posts from "../Blog/Posts";
 
 export default class Tab extends React.Component{
 

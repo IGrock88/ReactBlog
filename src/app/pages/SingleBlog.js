@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleBlogBody from "../components/SingleBlogBody";
+import SingleBlogLayout from "../components/Blog/SingleBlogLayout";
 
 export default class SingleBlog extends React.Component{
 
@@ -7,6 +7,6 @@ export default class SingleBlog extends React.Component{
         console.log(this.props);
 
         return <div className='col-lg-8 panel'>
-            <SingleBlogBody idBlog={this.props.params.idBlog}/></div>;
+            <SingleBlogLayout idBlog={this.props.params.idBlog}/></div>;
     }
 }

@@ -8,7 +8,7 @@ export default class BlogItem extends React.Component {
             <div className="thumbnail" key={index}>
                 <div className="caption">
                     <h3><Link to={"/blog/" + blog.id} >{blog.title}</Link></h3>
-                    <p><Link to={"/users/show/" + blog.idUser}>{blog.author}</Link></p>
+                    <p><Link to={"/users/show/" + blog.idUser}>Author: {blog.author}</Link></p>
                 </div>
             </div>
         );

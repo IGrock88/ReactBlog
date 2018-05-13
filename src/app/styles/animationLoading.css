@@ -1,5 +1,4 @@
-
-BODY {
+body {
     perspective: 500px;
 
 }
@@ -19,16 +18,21 @@ BODY {
 .cube3d__container{
 
 
-    animation: anima 3s linear infinite;
+    animation: anima 6s linear infinite;
     transform-style: preserve-3d;
 
 }
 
 .cube3d__side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     border: 1px solid #000;
     border-radius: 3%;
     opacity: 0.7;
+    font-size: 18px;
+    font-weight: bolder;
 
 }
 

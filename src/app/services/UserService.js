@@ -1,22 +1,15 @@
-import Service from './Service';
-import axios from "axios";
+import AjaxRequest from "./AjaxRequest";
 
-class UserService extends Service{
+export default class UserService{
 
-    constructor(params = null){
-        super();
-        this.url = 'https://jsonplaceholder.typicode.com/users';
-        this.params = params;
+    constructor(){
+        this.ajax = new AjaxRequest();
+
     }
 
-    loadData(){
-        axios({
-            method: 'get',
-            url: this.url,
-            params: this.params,
-        }).then(function (response) {
-            console.log(response);
-            super.setData(response.data);
-        });
+    getUsers(callback, params = null){
+        const URL = 'https://jsonplaceholder.typicode.com/users';
+        this.ajax.request(URL, callback, params);
     }
+
 }

@@ -1,10 +1,11 @@
 import React from 'react';
-import Header from "../components/Header";
-import Login from "../components/Login";
+import Header from "../components/global/Header";
+import Login from "../components/global/Login";
 import MainContent from "../pages/Main";
-import Aside from "../components/Aside";
-import Footer from "../components/Footer";
-import Modal from "../components/Modal";
+import Aside from "../components/global/Aside";
+import Footer from "../components/global/Footer";
+import Modal from "../components/global/Modal";
+import LoadingAnimation from "../components/global/LoadingAnimation";
 
 export default class App extends React.Component {
 
@@ -36,7 +37,8 @@ export default class App extends React.Component {
                        onClose={this.closeModal}
                        modalTitle={"Welcome"}>
                     <div className="input-group login">
-                        <h1>Здравствуй, гость. Вы зашли на React Blog</h1>
+                        <h2>Welcome, Guest. It's React Blog</h2>
+                        <LoadingAnimation/>
                     </div>
                 </Modal>
              </div>

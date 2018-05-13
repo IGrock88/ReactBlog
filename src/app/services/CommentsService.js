@@ -1,13 +1,23 @@
+import AjaxRequest from "./AjaxRequest";
 
 export default class CommentsService{
 
-    constructor(params = null){
-        this.url = 'https://jsonplaceholder.typicode.com/comments';
-        this.params = params;
+    constructor(){
+        this.ajax = new AjaxRequest();
+
     }
 
-    getPostComments(idPost){
-        let url = 'https://jsonplaceholder.typicode.com/posts/' + idPost + '/comments';
+    getPostComments(idPost, callback, params = null){
+        const URL = 'https://jsonplaceholder.typicode.com/posts/' + idPost + '/comments';
+        this.ajax.request(URL, callback, params);
+    }
 
+    getComments(callback, params = null){
+        const URL = 'https://jsonplaceholder.typicode.com/comments';
+        const QUANTITY_COMMENTS = 100;
+        params = {
+            _limit: QUANTITY_COMMENTS
+        };
+        this.ajax.request(URL, callback, params);
     }
 }
