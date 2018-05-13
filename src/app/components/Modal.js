@@ -7,7 +7,6 @@ export default class Modal extends React.Component {
             return null;
         }
 
-
         return (
             <div className="backdrop">
                 <div className="LoginModal">

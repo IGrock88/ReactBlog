@@ -2,13 +2,26 @@ import AjaxRequest from "./AjaxRequest";
 
 export default class BlogService{
 
-    getBlogs(callback, params = null){
-        const URL = 'https://my-json-server.typicode.com/IGrock88/json/blogs';
-        new AjaxRequest().request(URL, callback, params);
+    constructor(){
+        this.ajaxRequest = new AjaxRequest();
     }
 
-    getOneBlog(id, params = null){
-        // TODO: реализовать метод получения 1 блога по ид
+    getBlogs(callback, params = null){
+        const URL = 'https://my-json-server.typicode.com/IGrock88/json/blogs';
+        this.ajaxRequest.request(URL, callback, params);
+    }
+
+    getOneBlog(id,callback, params = null){
+        const URL = 'https://my-json-server.typicode.com/IGrock88/json/blogs/' + id;
+        this.ajaxRequest.request(URL, callback, params);
+    }
+
+    getPostsByBlogId(idBlog, callback, params = null){
+        const URL = 'https://my-json-server.typicode.com/IGrock88/json/posts';
+        params = {
+            idBlog: idBlog
+        };
+        this.ajaxRequest.request(URL, callback, params);
     }
 
     deleteOneBlog(id, params = null){

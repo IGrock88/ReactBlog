@@ -10,7 +10,11 @@ export default class AjaxRequest {
             params: params,
         }).then((response)=> {
             console.log(response);
-            callback(response.data);
+            let data = [];
+            // Сделано чтобы всегда был один тип данных, можно переиспользовать элементы например BlogItem
+            if(Array.isArray(response.data)) data = response.data;
+            else data.push(response.data);
+            callback(data);
         }).catch((errror) => {
             console.log("Ошибка", errror);
         });

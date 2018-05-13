@@ -6,10 +6,11 @@ import App from "../layouts/App";
 import Main from "../pages/Main";
 import Blogs from "../pages/Blogs";
 import SinglePost from "../pages/SinglePost";
-import Comments from "../pages/Comments";
+import Comments from "../components/Comments";
 import Users from "../pages/Users";
 import SingleUser from "../pages/SingleUser";
 import Error404 from "../pages/error/Error404";
+import SingleBlock from "../pages/SingleBlog";
 
 module.exports = function (idRoot) {
     ReactDom.render(
@@ -17,7 +18,8 @@ module.exports = function (idRoot) {
             <Route path="/" component={App}>
                 <IndexRoute component={Main} />
                 <Route path="blog" component={Blogs} />
-                <Route path="blog/view/:idPost" component={SinglePost}/>
+                <Route path="blog/:idBlog" component={SingleBlock}/>
+                <Route path="blog/post/:idPost" component={SinglePost}/>
                 <Route path="comments" component={Comments}/>
                 <Route path="users" component={Users}/>
                 <Route path="users/show/:idUser" component={SingleUser}/>

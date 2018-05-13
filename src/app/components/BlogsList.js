@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogService from "../services/BlogService";
-import LoadingAjax from "./LoadingAjax";
-import {Link} from "react-router";
+import LoadingAnimation from "./LoadingAnimation";
+import BlogItem from "./BlogItem";
 
 export default class BlogsList extends React.Component {
 
@@ -24,23 +24,9 @@ export default class BlogsList extends React.Component {
 
     render() {
         if(!this.state.blogs.length){
-            return <LoadingAjax/>;
+            return <LoadingAnimation/>;
         }
-        let blogs = this.state.blogs.map((blog, index) =>
-            <div className="thumbnail" key={index}>
-                <div className="caption">
-                    <h3>{blog.title}</h3>
-                    <p>{blog.author}</p>
-                    <p><Link to={"users/show/" + blog.idUser} className="btn btn-primary" role="button">Show Author</Link> <Link to="#" className="btn btn-default" role="button">Read Blog</Link>
-                    </p>
-                </div>
-            </div>
-        );
-        return (
-            <div>
-                {blogs}
-            </div>
-        );
+        return <BlogItem blogs={this.state.blogs}/>;
     }
 
 }
