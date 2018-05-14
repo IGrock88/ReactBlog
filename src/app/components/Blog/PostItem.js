@@ -16,7 +16,6 @@ export default class PostItem extends React.Component {
     }
 
     toggleQuickText(event){
-
         let newDetailsArray = this.state.showDetails;
         newDetailsArray[event.target.tabIndex] = !this.state.showDetails[event.target.tabIndex];
 
@@ -30,7 +29,11 @@ export default class PostItem extends React.Component {
             <div  className="panel panel-default" key={index}>
                 <div className="panel-heading">
                     <h4 className='post__header'><Link to={'/blog/post/' + post.id}>{post.title} </Link></h4>
-                    <a className="label label-primary" tabIndex={index} onClick={this.toggleQuickText}>Quick view</a>
+                    <a className="label label-primary"
+                       tabIndex={index}
+                       onClick={this.toggleQuickText}>
+                        {this.state.showDetails[index] ? "Hide" : "Quick view"}
+                    </a>
                 </div>
                 <QuickPostText text={post.body} show={this.state.showDetails[index]}/>
             </div>
@@ -39,5 +42,4 @@ export default class PostItem extends React.Component {
             <div className='panel-body'>{posts}</div>
         );
     }
-
 }
