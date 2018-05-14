@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from './Modal';
 
-export default class Login extends React.Component {
+export default class Jumbotron extends React.Component {
 
     constructor(props) {
         super(props);
@@ -18,7 +18,7 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <div className="panel col-lg-12">
+            <div className="col-lg-12">
             <section className="jumbotron">
                 <h1>Login</h1>
                 <p className="lead">Please, login</p>
@@ -28,7 +28,7 @@ export default class Login extends React.Component {
                 </p>
                 <Modal show={this.state.isOpen}
                        onClose={this.toggleModal}
-                        modalTitle={"Login"}>
+                        modalTitle={"Jumbotron"}>
                     <div className="input-group login">
                         <input type="text" className="form-control login__textField" placeholder="Username"/>
                         <input type="password" className="form-control login__textField" placeholder="Password"/>
