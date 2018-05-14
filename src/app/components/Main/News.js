@@ -37,7 +37,6 @@ export default class News extends React.Component{
 
         return(
             <div className="panel-body ">
-                <h3>Новости</h3>
                 {articles}
             </div>
         );

@@ -1,9 +1,7 @@
 import React from 'react';
 import Tab from "./Tab";
 
-
-
-
+// Пока убрал из приложения
 export default class Tabs extends React.Component{
     constructor(props){
         super(props);

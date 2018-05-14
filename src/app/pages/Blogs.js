@@ -1,5 +1,4 @@
 import React from 'react';
-import BlogService from "../services/BlogService";
 import BlogsList from "../components/Blog/BlogsList";
 
 export default class Blogs extends React.Component {

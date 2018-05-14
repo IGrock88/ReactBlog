@@ -1,7 +1,6 @@
 import React from 'react';
-import Tabs from "../components/Main/Tabs";
 import Jumbotron from "../components/global/Jumbotron";
-import {Link} from 'react-router';
+import News from "../components/Main/News";
 
 export default class MainContent extends React.Component {
 
@@ -12,7 +11,10 @@ export default class MainContent extends React.Component {
 
             <Jumbotron/>
             <section className="col-lg-8 left-col">
-                <Tabs />
+                <div className="panel panel-success">
+                    <div className="panel-heading ">News</div>
+                <News/>
+                </div>
             </section>
             </main>
         );
