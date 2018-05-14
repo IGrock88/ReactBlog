@@ -6,7 +6,6 @@ export default class PostItem extends React.Component {
 
     constructor(props){
         super(props);
-
         // на каждый пост нужно навесить отдельный флаг
         this.state = {
             showDetails: new Array(this.props.posts.length).fill(false)
