@@ -31,6 +31,6 @@ module.exports = {
                 loader: "url-loader?limit=10000&mimetype=application/svg+xml&name=./fonts/[name].[ext]"
             }
         ]
-    },
+    }
 
 };

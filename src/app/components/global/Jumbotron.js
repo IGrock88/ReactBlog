@@ -7,10 +7,9 @@ export default class Jumbotron extends React.Component {
         super(props);
 
         this.state = { isOpen: false };
-        this.toggleModal = this.toggleModal.bind(this);
     }
 
-    toggleModal(){
+    toggleModal =() =>{
         this.setState({
             isOpen: !this.state.isOpen
         });
