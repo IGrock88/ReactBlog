@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import {ADD_USER, FETCH_USERS_START, FETCH_USERS_END} from "../constants/usersConstants";
+import {ADD_USER, FETCH_USERS_START, FETCH_USERS_END, EDIT_USER} from "../constants/usersConstants";
 import dispatcher from '../dispatcher';
 import AjaxRequest from "../services/AjaxRequest";
 
@@ -22,6 +22,10 @@ class UsersStore extends EventEmitter {
             });
         });
     };
+
+    editUser = (user) =>{
+
+    }
 
     fetchUsersEnd =(users) =>
     {
@@ -54,6 +58,10 @@ class UsersStore extends EventEmitter {
             }
             case FETCH_USERS_END: {
                 this.fetchUsersEnd(action.payload);
+                break;
+            }
+            case EDIT_USER: {
+                this.editUser(action.payload);
                 break;
             }
         }
