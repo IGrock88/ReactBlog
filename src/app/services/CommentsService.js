@@ -9,7 +9,7 @@ export default class CommentsService{
 
     getPostComments(idPost, callback, params = null){
         const URL = 'https://jsonplaceholder.typicode.com/posts/' + idPost + '/comments';
-        this.ajax.request(URL, callback, params);
+        this.ajax.send(URL, callback, params);
     }
 
     getComments(callback, params = null){
@@ -18,6 +18,6 @@ export default class CommentsService{
         params = {
             _limit: QUANTITY_COMMENTS
         };
-        this.ajax.request(URL, callback, params);
+        this.ajax.send(URL, callback, params);
     }
 }

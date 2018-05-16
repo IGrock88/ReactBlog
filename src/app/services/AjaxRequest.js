@@ -3,7 +3,7 @@ import axios from "axios/index";
 
 export default class AjaxRequest {
 
-    request(url, callback, params = null, method = 'get'){
+    send(url, callback, params = null, method = 'get'){
         axios({
             method: method,
             url: url,

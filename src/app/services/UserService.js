@@ -9,7 +9,7 @@ export default class UserService{
 
     getUsers(callback, params = null){
         const URL = 'https://jsonplaceholder.typicode.com/users';
-        this.ajax.request(URL, callback, params);
+        this.ajax.send(URL, callback, params);
     }
 
 }

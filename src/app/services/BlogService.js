@@ -8,12 +8,12 @@ export default class BlogService{
 
     getBlogs(callback, params = null){
         const URL = 'https://my-json-server.typicode.com/IGrock88/json/blogs';
-        this.ajaxRequest.request(URL, callback, params);
+        this.ajaxRequest.send(URL, callback, params);
     }
 
     getOneBlog(id,callback, params = null){
         const URL = 'https://my-json-server.typicode.com/IGrock88/json/blogs/' + id;
-        this.ajaxRequest.request(URL, callback, params);
+        this.ajaxRequest.send(URL, callback, params);
     }
 
     getPostsByBlogId(idBlog, callback, params = null){
@@ -21,7 +21,7 @@ export default class BlogService{
         params = {
             idBlog: idBlog
         };
-        this.ajaxRequest.request(URL, callback, params);
+        this.ajaxRequest.send(URL, callback, params);
     }
 
     deleteOneBlog(id, params = null){

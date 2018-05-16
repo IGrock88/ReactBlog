@@ -1,5 +1,6 @@
 import React from 'react';
-
+import UsersStore from '../../stores/UsersStore';
+import {addUser, fetchUser} from "../../actions/usersActions";
 import LoadingAnimation from "../global/LoadingAnimation";
 import UserService from "../../services/UserService";
 
@@ -13,14 +14,35 @@ export default class UserList extends React.Component {
         }
     }
 
-    componentWillMount(){
-        let userService = new UserService();
-        userService.getUsers((data) => {
-            this.setState({
-                users: data
-            })
-        });
+    // newUser()
+    // {
+    //     console.log("Coments New");
+    //     let body = 'Новый комментарий';
+    //     let userId = 1;
+    //     let title = 'Название комментария';
+    //     addComment(title, userId, body);
+    // }
 
+    onUserChange = (users) =>
+    {
+        console.log("Coments Change");
+        this.setState({
+            users: users
+        });
+    };
+
+    componentWillMount()
+    {
+        UsersStore.on('change', this.onUserChange);
+    }
+
+    componentDidMount()
+    {
+        fetchUser();
+    }
+
+    componentWillUnmount(){
+        UsersStore.removeListener('change', this.onUserChange);
     }
 
 

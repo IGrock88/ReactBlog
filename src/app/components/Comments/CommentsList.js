@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentsService from "../../services/CommentsService";
+import CommentsService from '../../services/CommentsService';
 import LoadingAnimation from "../global/LoadingAnimation";
 
 
