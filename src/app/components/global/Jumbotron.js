@@ -27,7 +27,7 @@ export default class Jumbotron extends React.Component {
                 </p>
                 <Modal show={this.state.isOpen}
                        onClose={this.toggleModal}
-                        modalTitle={"Jumbotron"}>
+                        modalTitle={"Login"}>
                     <div className="input-group login">
                         <input type="text" className="form-control login__textField" placeholder="Username"/>
                         <input type="password" className="form-control login__textField" placeholder="Password"/>

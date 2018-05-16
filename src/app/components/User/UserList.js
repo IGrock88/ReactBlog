@@ -2,7 +2,7 @@ import React from 'react';
 import UsersStore from '../../stores/UsersStore';
 import {addUser, fetchUser} from "../../actions/usersActions";
 import LoadingAnimation from "../global/LoadingAnimation";
-import UserService from "../../services/UserService";
+
 
 
 export default class UserList extends React.Component {
@@ -20,7 +20,7 @@ export default class UserList extends React.Component {
     //     let body = 'Новый комментарий';
     //     let userId = 1;
     //     let title = 'Название комментария';
-    //     addComment(title, userId, body);
+    //     addUser(title, userId, body);
     // }
 
     onUserChange = (users) =>
