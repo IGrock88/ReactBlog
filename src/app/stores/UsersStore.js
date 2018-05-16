@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import {ADD_USER, FETCH_USERS_START, FETCH_USERS_END, EDIT_USER} from "../constants/usersConstants";
+import {ADD_USER, FETCH_USERS_START, FETCH_USERS_END, EDIT_USER, DELETE_USER} from "../constants/usersConstants";
 import dispatcher from '../dispatcher';
 import AjaxRequest from "../services/AjaxRequest";
 
@@ -12,7 +12,7 @@ class UsersStore extends EventEmitter {
         this.ajax = new AjaxRequest();
     }
 
-    fetchUsersStart =() =>
+    fetchUsersStart = () =>
     {
         const URL = 'https://jsonplaceholder.typicode.com/users/';
         this.ajax.send(URL, (data) =>{
@@ -23,22 +23,39 @@ class UsersStore extends EventEmitter {
         });
     };
 
+    deleteUser = (userId) => {
+        console.log("id", userId);
+        delete this.users[userId];
+        console.log(this.users);
+        this.change();
+
+        //Заготовка
+        // const URL = '/user/delete';
+        // params = {userId: userId}
+        // this.ajax.send(URL, (data) => {
+        //    if(data.result == 1) this.change();
+        // }, params);
+    };
+
     editUser = (user) =>{
 
-    }
+    };
 
-    fetchUsersEnd =(users) =>
+    fetchUsersEnd = (users) =>
     {
-        this.users = users;
+        for(let i = 0; i < users.length; i++){
+            this.users[users[i].id] = users[i];
+        }
+        console.log(this.users);
         this.change();
     };
 
-    change =() =>
+    change = () =>
     {
         this.emit('change', this.users);
     };
 
-    addUser =(user) =>
+    addUser = (user) =>
     {
         this.users.push(user);
         this.change();
@@ -62,6 +79,10 @@ class UsersStore extends EventEmitter {
             }
             case EDIT_USER: {
                 this.editUser(action.payload);
+                break;
+            }
+            case DELETE_USER: {
+                this.deleteUser(action.payload);
                 break;
             }
         }

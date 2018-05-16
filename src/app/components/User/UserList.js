@@ -1,6 +1,6 @@
 import React from 'react';
 import UsersStore from '../../stores/UsersStore';
-import {addUser, fetchUser} from "../../actions/usersActions";
+import {addUser, fetchUser, deleteActionUser} from "../../actions/usersActions";
 import LoadingAnimation from "../global/LoadingAnimation";
 
 
@@ -25,10 +25,13 @@ export default class UserList extends React.Component {
 
     onUserChange = (users) =>
     {
-        console.log("Coments Change");
         this.setState({
             users: users
         });
+    };
+
+    deleteUser = (event) => {
+        deleteActionUser(event.target.tabIndex);
     };
 
     componentWillMount()
@@ -60,6 +63,7 @@ export default class UserList extends React.Component {
                             <a href="#" className="btn btn-default" role="button">Blogs</a>
                             <a href="#" className="btn btn-default" role="button">Posts</a>
                             <a href="#" className="btn btn-default" role="button">Comments</a>
+                            <button tabIndex={user.id} onClick={this.deleteUser} className="btn btn-default" role="button">Delete user</button>
                         </p>
                     </div>
             </div>
