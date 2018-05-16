@@ -1,5 +1,11 @@
 import { EventEmitter } from 'events';
-import {ADD_USER, FETCH_USERS_START, FETCH_USERS_END, EDIT_USER, DELETE_USER} from "../constants/usersConstants";
+import {
+    ADD_USER,
+    FETCH_USERS_START,
+    FETCH_USERS_END,
+    EDIT_USER,
+    DELETE_USER
+} from "../constants/usersConstants";
 import dispatcher from '../dispatcher';
 import AjaxRequest from "../services/AjaxRequest";
 
@@ -29,7 +35,6 @@ class UsersStore extends EventEmitter {
         console.log(this.users);
         this.change();
 
-        //Заготовка
         // const URL = '/user/delete';
         // params = {userId: userId}
         // this.ajax.send(URL, (data) => {
@@ -38,7 +43,14 @@ class UsersStore extends EventEmitter {
     };
 
     editUser = (user) =>{
+        this.users[user.id] = user;
+        this.change();
 
+        // const URL = '/user/edit';
+        // params = {user: user}
+        // this.ajax.send(URL, (data) => {
+        //    if(data.result == 1) this.change();
+        // }, params);
     };
 
     fetchUsersEnd = (users) =>
@@ -46,7 +58,6 @@ class UsersStore extends EventEmitter {
         for(let i = 0; i < users.length; i++){
             this.users[users[i].id] = users[i];
         }
-        console.log(this.users);
         this.change();
     };
 
@@ -85,6 +96,7 @@ class UsersStore extends EventEmitter {
                 this.deleteUser(action.payload);
                 break;
             }
+
         }
     }
 }

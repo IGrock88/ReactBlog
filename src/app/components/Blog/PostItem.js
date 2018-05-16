@@ -12,7 +12,6 @@ export default class PostItem extends React.Component {
     }
 
     toggleQuickText =(event) =>{
-
         this.setState({
             showDetails: !this.state.showDetails
         });

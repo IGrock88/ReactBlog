@@ -1,5 +1,5 @@
 import dispacher from '../dispatcher';
-import {ADD_USER, FETCH_USERS_START, DELETE_USER} from "../constants/usersConstants";
+import {ADD_USER, FETCH_USERS_START, DELETE_USER, EDIT_USER, GET_ONE_USER_START} from "../constants/usersConstants";
 
 export function addUser(title, userId, body) {
     const comment = {
@@ -19,10 +19,20 @@ export function fetchUser() {
     });
 }
 
-export function deleteActionUser(userId) {
+export function deleteUserAction(userId) {
     dispacher.dispatch({
         type: DELETE_USER,
         payload: userId
     })
 }
+
+export function editUserAction(user) {
+    dispacher.dispatch({
+        type: EDIT_USER,
+        payload: user
+    })
+}
+
+
+
 

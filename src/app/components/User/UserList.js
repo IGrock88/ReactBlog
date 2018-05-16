@@ -1,6 +1,6 @@
 import React from 'react';
 import UsersStore from '../../stores/UsersStore';
-import {addUser, fetchUser, deleteActionUser} from "../../actions/usersActions";
+import {addUser, fetchUser, deleteUserAction} from "../../actions/usersActions";
 import LoadingAnimation from "../global/LoadingAnimation";
 import UserItem from "./UserItem";
 
@@ -30,7 +30,7 @@ export default class UserList extends React.Component {
     };
 
     deleteUser = (event) => {
-        deleteActionUser(event.target.tabIndex);
+        deleteUserAction(event.target.tabIndex);
     };
 
     editUser = (event) => {
