@@ -63,7 +63,7 @@ export default class UserList extends React.Component {
                             <a href="#" className="btn btn-default" role="button">Blogs</a>
                             <a href="#" className="btn btn-default" role="button">Posts</a>
                             <a href="#" className="btn btn-default" role="button">Comments</a>
-                            <button tabIndex={user.id} onClick={this.deleteUser} className="btn btn-default" role="button">Delete user</button>
+                            <button tabIndex={user.id} onClick={this.deleteUser} className="btn btn-danger" role="button">Delete user</button>
                         </p>
                     </div>
             </div>
