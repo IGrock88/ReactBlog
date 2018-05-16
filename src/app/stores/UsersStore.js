@@ -8,7 +8,7 @@ class UsersStore extends EventEmitter {
     {
         super(...arguments);
 
-        this.users = []; //Для хранения комментариев
+        this.users = []; // для пользователей
         this.ajax = new AjaxRequest();
     }
 
