@@ -10,11 +10,9 @@ export default class PostItem extends React.Component {
         this.state = {
             showDetails: new Array(this.props.posts.length).fill(false)
         }
-
-        this.toggleQuickText = this.toggleQuickText.bind(this);
     }
 
-    toggleQuickText(event){
+    toggleQuickText =(event) =>{
         let newDetailsArray = this.state.showDetails;
         newDetailsArray[event.target.tabIndex] = !this.state.showDetails[event.target.tabIndex];
 
