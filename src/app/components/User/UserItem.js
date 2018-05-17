@@ -19,8 +19,6 @@ export default class UserItem extends React.Component {
                         <a href="#" className="btn btn-primary" role="button">Profile</a>
 
                         <UserAdminOptions user={this.props.user}
-                                          deleteUser={this.props.deleteUser}
-                                          editUser={this.props.editUser}
                                           userRole={this.userRole}/>
                     </div>
                 </div>

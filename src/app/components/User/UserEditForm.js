@@ -1,6 +1,6 @@
 import React from 'react';
 import {editUserAction} from "../../actions/usersActions";
-import UserStore from "../../stores/UsersStore";
+
 // Написал валидатор на будущее
 //import {isValidPhone, isValidEmail, isValidLogin, isValidName, isValidUrl} from "../../services/formValidator";
 

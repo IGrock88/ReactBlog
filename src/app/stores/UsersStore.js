@@ -30,9 +30,7 @@ class UsersStore extends EventEmitter {
     };
 
     deleteUser = (userId) => {
-        console.log("id", userId);
         delete this.users[userId];
-        console.log(this.users);
         this.change();
 // Заготовка
         // const URL = '/user/delete';
