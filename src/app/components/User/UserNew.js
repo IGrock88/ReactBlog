@@ -79,7 +79,7 @@ export default class UserNew extends React.Component {
                            value={this.state.phone} onChange={this.handleChange}/>
                 </div>
                 <div><button onClick={this.addUser} className='btn btn-success'>Save</button></div>
-                <Message showMessage={this.state.isOpen}>Save is successful</Message>
+                <Message showMessage={this.state.isOpen}>Adding the new user successfully</Message>
             </div>
         );
     }
