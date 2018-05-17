@@ -98,7 +98,6 @@ class UsersStore extends EventEmitter {
                 this.deleteUser(action.payload);
                 break;
             }
-
         }
     }
 }

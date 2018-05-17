@@ -1,5 +1,6 @@
 import React from 'react';
 import {editUserAction} from "../../actions/usersActions";
+import UserStore from "../../stores/UsersStore";
 // Написал валидатор на будущее
 //import {isValidPhone, isValidEmail, isValidLogin, isValidName, isValidUrl} from "../../services/formValidator";
 
@@ -24,7 +25,6 @@ export default class UserEditForm extends React.Component {
         this.setState({
            [event.target.name]:  event.target.value
         });
-
     };
 
     toggleMessage = () => {
@@ -44,8 +44,8 @@ export default class UserEditForm extends React.Component {
                 website: this.state.website,
                 phone: this.state.phone,
             };
-            editUserAction(user);
             this.toggleMessage();
+            editUserAction(user);
         }
     };
 
