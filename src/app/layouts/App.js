@@ -1,7 +1,5 @@
 import React from 'react';
 import Header from "../components/global/Header";
-import Jumbotron from "../components/global/Jumbotron";
-import MainContent from "../pages/Main";
 import Aside from "../components/global/Aside";
 import Footer from "../components/global/Footer";
 import Modal from "../components/global/Modal";

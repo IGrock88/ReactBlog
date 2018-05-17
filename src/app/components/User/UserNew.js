@@ -1,20 +1,20 @@
 import React from 'react';
-import {editUserAction} from "../../actions/usersActions";
+import {addUserAction} from "../../actions/usersActions";
 // Написал валидатор на будущее
 //import {isValidPhone, isValidEmail, isValidLogin, isValidName, isValidUrl} from "../../services/formValidator";
 
 import Message from "../global/Message";
 
-export default class UserEditForm extends React.Component {
+export default class UserNew extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            email: this.props.user.email,
-            username: this.props.user.username,
-            name: this.props.user.name,
-            website: this.props.user.website,
-            phone: this.props.user.phone,
+            email: "",
+            username: "",
+            name: "",
+            website: "",
+            phone: "",
             isValidForm: true, // валидация пока не готова,
             isOpen: false
         }
@@ -22,7 +22,7 @@ export default class UserEditForm extends React.Component {
 
     handleChange = (event) => {
         this.setState({
-           [event.target.name]:  event.target.value
+            [event.target.name]:  event.target.value
         });
 
     };
@@ -34,17 +34,16 @@ export default class UserEditForm extends React.Component {
         }, 3000)
     };
 
-    saveUser = () => {
+    addUser = () => {
         if(this.state.isValidForm){
             let user = {
-                id: this.props.user.id,
                 email: this.state.email,
                 username: this.state.username,
                 name: this.state.name,
                 website: this.state.website,
                 phone: this.state.phone,
             };
-            editUserAction(user);
+            addUserAction(user);
             this.toggleMessage();
         }
     };
@@ -53,7 +52,7 @@ export default class UserEditForm extends React.Component {
         if(!this.props.show) return null;
 
         return (
-            <div>
+            <div className="panel panel-default">
                 <div className="input-group">
                     <span className="input-group-addon user_edit__label">Email</span>
                     <input name='email' type="email" className="form-control" placeholder="Email"
@@ -79,7 +78,7 @@ export default class UserEditForm extends React.Component {
                     <input name='phone' type="text" className="form-control" placeholder="Phone"
                            value={this.state.phone} onChange={this.handleChange}/>
                 </div>
-                <div><button onClick={this.saveUser} className='btn btn-success'>Save</button></div>
+                <div><button onClick={this.addUser} className='btn btn-success'>Save</button></div>
                 <Message showMessage={this.state.isOpen}>Save is successful</Message>
             </div>
         );

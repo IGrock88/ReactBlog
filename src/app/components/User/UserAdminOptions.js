@@ -1,5 +1,6 @@
 import React from 'react';
 import UserEditForm from "./UserEditForm";
+import {deleteUserAction} from "../../actions/usersActions";
 
 
 export default class UserAdminOptions extends React.Component {
@@ -11,11 +12,15 @@ export default class UserAdminOptions extends React.Component {
         }
     }
 
+    deleteUser = (event) => {
+        deleteUserAction(event.target.tabIndex);
+    };
+
     toggleEditForm = () => {
         this.setState({
             show: !this.state.show
         })
-    }
+    };
 
     render() {
 
@@ -23,7 +28,7 @@ export default class UserAdminOptions extends React.Component {
 
         return (
             <div>
-                <button tabIndex={this.props.user.id} onClick={this.props.deleteUser} className="btn btn-danger"
+                <button tabIndex={this.props.user.id} onClick={this.deleteUser} className="btn btn-danger"
                         role="button">Delete user
                 </button>
                 <button tabIndex={this.props.user.id} onClick={this.toggleEditForm} className="btn btn-danger"

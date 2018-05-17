@@ -34,7 +34,7 @@ class UsersStore extends EventEmitter {
         delete this.users[userId];
         console.log(this.users);
         this.change();
-
+// Заготовка
         // const URL = '/user/delete';
         // params = {userId: userId}
         // this.ajax.send(URL, (data) => {
@@ -45,7 +45,7 @@ class UsersStore extends EventEmitter {
     editUser = (user) =>{
         this.users[user.id] = user;
         this.change();
-
+// Заготовка
         // const URL = '/user/edit';
         // params = {user: user}
         // this.ajax.send(URL, (data) => {
@@ -68,7 +68,9 @@ class UsersStore extends EventEmitter {
 
     addUser = (user) =>
     {
-        this.users.push(user);
+        let length = this.users.length;
+        user.id = length + 1; // пока нет бекенда ид нового элемента вычисляем по длине массива
+        this.users[user.id] = user;
         this.change();
     };
 
