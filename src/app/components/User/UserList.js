@@ -45,7 +45,7 @@ export default class UserList extends React.Component {
         if (!this.state.users.length) return <LoadingAnimation/>;
 
         let users = this.state.users.map((user, index) =>
-            <UserItem user={user} key={index} deleteUser={this.deleteUser} editUser={this.editUser}/>
+            <UserItem user={user} key={index}/>
         );
 
         return (
