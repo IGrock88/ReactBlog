@@ -63,6 +63,10 @@ body {
     cursor: pointer;
 }
 
+.add__button{
+    margin-bottom: 10px !important;
+}
+
 .topMessage{
     height: 50px;
     background-color: #d6e9c6;

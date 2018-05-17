@@ -51,7 +51,7 @@ export default class UserList extends React.Component {
         return (
             <div>
                 <button onClick={this.toggleNewUser}
-                        className='btn-success btn'>{!this.state.isOpen ? "Add New User" : "Hide"}</button>
+                        className='add__button btn-success btn'>{!this.state.isOpen ? "Add New User" : "Hide"}</button>
                 <UserNew show={this.state.isOpen}/>
                 {users}
             </div>
