@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentsList from "../components/Comments/CommentsList";
+import CommentsList from "../components/Comments/AllCommentsList";
 
 export default class Comments extends React.Component{
 

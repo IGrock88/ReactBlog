@@ -1,9 +1,12 @@
 import React from 'react';
+import SinglePostLayout from "../components/Blog/SinglePostLayout";
+
 
 export default class SinglePost extends React.Component{
 
     render(){
-        //TODO
-        return <div className='col-lg-8 panel'>Test{this.props.params.idPost}</div>;
+
+        return <SinglePostLayout idPost={this.props.params.idPost}/> ;
     }
 }
+

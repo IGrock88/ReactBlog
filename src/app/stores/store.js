@@ -6,12 +6,18 @@ import promise from 'redux-promise-middleware';
 //Reducers
 import { postsReducer } from '../reducers/postsReducer';
 import {blogsReducer} from "../reducers/blogsReducer";
-//import { userReducer } from '../reducers/userReducer';
+import {singleBlogReducer} from "../reducers/singleBlogsReducer";
+import {singlePostReducer} from "../reducers/singlePostReducer";
+import {commentsReducer} from "../reducers/commentsReducer";
+
 
 const reducers = combineReducers({
     posts: postsReducer,
-    blogs: blogsReducer
-    //user: userReducer
+    blogs: blogsReducer,
+    blog: singleBlogReducer,
+    post: singlePostReducer,
+    comments: commentsReducer
+
 });
 
 const middleware = applyMiddleware(promise(), logger());

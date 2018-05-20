@@ -5,7 +5,7 @@ export default class LoadingAnimation extends React.Component {
 
     render() {
         return (
-            <div className="animation_holder">
+            <div className="animation_holder panel panel-default">
                 <div className="cube3d__container">
                     <div className="cube3d__side cube3d__top">React Blog</div>
                     <div className="cube3d__side cube3d__bottom">React Blog</div>
