@@ -6,7 +6,7 @@ export default class SideMenu extends React.Component {
     constructor(props){
         super(props);
         this.menuItems = [{link: '/', text: 'Home'},
-            {link: 'blog', text: 'Blog'}, {link: 'users', text: 'Comments'}, {link: 'users', text: 'Users'}];
+            {link: 'blog', text: 'Blog'}, {link: 'comments', text: 'Comments'}, {link: 'users', text: 'Users'}];
     }
 
     render() {
