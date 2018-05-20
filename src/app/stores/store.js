@@ -5,10 +5,12 @@ import promise from 'redux-promise-middleware';
 
 //Reducers
 import { postsReducer } from '../reducers/postsReducer';
+import {blogsReducer} from "../reducers/blogsReducer";
 //import { userReducer } from '../reducers/userReducer';
 
 const reducers = combineReducers({
     posts: postsReducer,
+    blogs: blogsReducer
     //user: userReducer
 });
 

@@ -1,32 +1,38 @@
 import React from 'react';
-import BlogService from "../../services/BlogService";
 import LoadingAnimation from "../global/LoadingAnimation";
 import BlogItem from "./BlogItem";
+import {connect} from "react-redux";
+import {fetchBlogs} from "../../actions/blogsActions";
 
-export default class BlogsList extends React.Component {
+class BlogsList extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
             blogs: []
         };
-    }
 
-    componentDidMount(){
-        let blogService = new BlogService();
+        this.props.dispatch(fetchBlogs());
 
-        blogService.getBlogs((data)=> {
-            this.setState({
-                blogs: data
-            })
-        });
     }
 
     render() {
-        if(!this.state.blogs.length){
-            return <LoadingAnimation/>;
-        }
-        return <BlogItem blogs={this.state.blogs}/>;
+
+        return (
+            <div>
+                {(this.props.is_fetching) ? <LoadingAnimation/> : <BlogItem blogs={this.props.blogs}/>}
+            </div>
+
+        );
     }
 
 }
+
+function mapStateToProps(store) {
+    return {
+        blogs: store.blogs.blogs,
+        is_fetching: store.blogs.is_fetching
+    };
+}
+
+export default connect(mapStateToProps)(BlogsList);
