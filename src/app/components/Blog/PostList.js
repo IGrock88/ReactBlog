@@ -4,10 +4,10 @@ import PostItem from "./PostItem";
 export default class PostList extends React.Component {
 
     render() {
-
         let posts = this.props.posts.map((post, index) =>
             <PostItem post={post} key={index}/>
         );
+
 
         return (
             <div className="panel panel-primary">

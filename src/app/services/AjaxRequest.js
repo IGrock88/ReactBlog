@@ -1,14 +1,16 @@
-import axios from "axios/index";
+import axios from "axios";
 
 
 export default class AjaxRequest {
 
-    send(url, callback, params = null, method = 'get'){
-        axios({
-            method: method,
-            url: url,
-            params: params,
-        }).then((response)=> {
+    send(url, callback = null, params = null){
+        if(callback === null){
+            return axios.get(url, {params: params});
+        }
+        axios.get(
+            url,
+            {params: params}
+        ).then((response)=> {
             console.log(response);
             let data = [];
             // Сделано чтобы всегда был один тип данных, можно переиспользовать элементы например BlogItem

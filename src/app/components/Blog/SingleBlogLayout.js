@@ -3,8 +3,10 @@ import BlogItem from "./BlogItem";
 import BlogService from "../../services/BlogService";
 import LoadingAnimation from "../global/LoadingAnimation";
 import PostList from "./PostList";
+import {fetchPosts} from "../../actions/postsActions";
+import {connect} from "react-redux";
 
-export default class SingleBlogLayout extends React.Component {
+class SingleBlogLayout extends React.Component {
 
     constructor(props){
         super(props);
@@ -12,6 +14,8 @@ export default class SingleBlogLayout extends React.Component {
             blog: [],
             posts: []
         }
+        let params = {idBlog: this.props.idBlog};
+        this.props.dispatch(fetchPosts(this.props.idBlog));
     }
 
     componentWillMount(){
@@ -26,24 +30,27 @@ export default class SingleBlogLayout extends React.Component {
                 blog: data
             })
         });
-
-        blogService.getPostsByBlogId(this.props.idBlog, (data) => {
-            this.setState({
-                posts: data
-            })
-        })
     }
 
 
 
     render() {
-        if(!this.state.blog.length || !this.state.posts.length) return <LoadingAnimation/>;
+        if(!this.state.blog.length) return <LoadingAnimation/>;
 
         return (
             <div>
                 <BlogItem blogs={this.state.blog}/>
-                <PostList posts={this.state.posts}/>
-            </div>
+                {this.props.is_fetching ? <LoadingAnimation/> :  <PostList posts={this.props.posts}/>}
+             </div>
         );
     }
 }
+
+function mapStateToProps(store) {
+    return {
+        posts: store.posts.posts,
+        is_fetching: store.posts.is_fetching
+    };
+}
+
+export default connect(mapStateToProps)(SingleBlogLayout);

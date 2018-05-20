@@ -1,15 +1,14 @@
 import {FETCH_POSTS} from "../constants/postsConstants";
 import AjaxRequest from "../services/AjaxRequest";
+import axios from 'axios';
 
 
-export function fetchPosts() {
+export function fetchPosts(idBlog = null) {
     let url = 'https://my-json-server.typicode.com/IGrock88/json/posts';
-    let posts = [];
-    new AjaxRequest().send(url, (data) => {
-       posts = data;
-    });
+    console.log(idBlog);
+
     return {
         type: FETCH_POSTS,
-        payload: posts
+        payload: new AjaxRequest().send(url, null, {idBlog: idBlog})
     }
 }

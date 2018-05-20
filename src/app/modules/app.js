@@ -1,6 +1,8 @@
 import ReactDom from 'react-dom';
 import React from 'react';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import { Provider } from 'react-redux';
+import store from '../stores/store';
 
 import App from "../layouts/App";
 import Main from "../pages/Main";
@@ -14,6 +16,7 @@ import SingleBlock from "../pages/SingleBlog";
 
 module.exports = function (idRoot) {
     ReactDom.render(
+        <Provider store={store}>
         <Router history={browserHistory}>
             <Route path="/" component={App}>
                 <IndexRoute component={Main} />
@@ -25,6 +28,7 @@ module.exports = function (idRoot) {
                 <Route path="users/show/:idUser" component={SingleUser}/>
                 <Route path="*" component={Error404} />
             </Route>
-        </Router>, document.querySelector(idRoot)
+        </Router>
+        </Provider>, document.querySelector(idRoot)
     );
 };
